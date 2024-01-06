@@ -5,7 +5,7 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'default_secret_key_for_development')
     SQLALCHEMY_DATABASE_URL = 'sqlite:///site.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SERVER_NAME = 'localhost:5000'
+    SERVER_NAME = os.environ.get('SERVER_NAME', 'default_server_name')
     SESSION_COOKIE_NAME =  'my_session'
     PERMANENT_SESSION_LIFETIME = 86400
     REMEMBER_COOKIE_DURATION = 86400
