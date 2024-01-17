@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>My Books</h2>
+
+<ul class="books">
+    <a href="{{ url_for('main.add_book') }}" class="btn">Add New Book</a>
+    {% for book in user_books %}
+    <li>
+        Title: {{ book.title }}
+    </li>
+    <li>
+        Author: {{ book.author }}
+    </li>
+    <li>
+        Genre: {{ book.genre }}
+    </li>
+    <li>
+        Start Date: {{ book.start_date }}
+    </li>
+    <li>
+        End Date: {{ book.end_date }}
+    </li>
+    <li>
+        Status: {{ book.status }}
+    </li>
+    <li>
+        Rating: {{ book.rating }}
+    </li>
+    <li>
+        <a href="{{ url_for('main.edit_book', book_id=book.id) }}" class="btn">Edit</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
