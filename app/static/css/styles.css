@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; 
+}
+
+#content {
+  min-height: fit-content
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-top: 75px; /* Same as your navbar's height */
+}
+
+nav {
+  background-color: #96c7e8; /* Blue background */
+  color: white; /* White text */
+  text-align: center; /* Centered text */
+  padding: 10px 0; /* Padding of 10px on top and bottom */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.menu, .user-info {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.menu li, .user-info li {
+  margin-right: 15px;
+}
+
+.menu li a, .user-info li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu li a:hover, .user-info li a:hover {
+  color: #062235;
+}
+
+/* Specific styles for user info */
+.user-info {
+  margin-left: auto; /* Pushes user-info to the right */
+}
+
+.user {
+  color: white;
+  font-weight: bold;
+}
+
+
+.navbar .menu li {
+  margin: 0 10px; /* Add some space between menu items */
+}
+
+.navbar .menu li a {
+  color: white; /* Color of the menu item text */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 16px; /* Adjust font size as needed */
+  padding: 5px; /* Add some padding for better click area */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.navbar .menu li a:hover {
+  color: #062235; /* Color when hovered */
+}
+
+.button a{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  background: #2980b9;
+  padding: 7px 12px;;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+}
+
+.btn {
+  background-color: #e6e6e6; /* Green background */
+  border: none; /* No borders */
+  color: #2980b9; /* White text */
+  padding: 15px 32px; /* Top and bottom padding 15px, left and right padding 32px */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* No underline on the text */
+  display: inline-block; /* Inline block element */
+  font-size: 16px; /* Text size */
+  margin: 4px 2px; /* Margin for spacing around the button */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.btn:hover {
+  background-color: darkblue; /* Darker shade of green on hover */
+}
+
+footer {
+  background-color: darkblue; /* Dark background color */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 20px 0; /* Padding of 20px on top and bottom */
+  font-size: 1rem; /* Reasonable text size */
+  bottom: 0; /* Position at the bottom */
+  width: 100%; /* Full width */
+}
+
+footer ul {
+  list-style-type: none; /* Remove bullet points from list */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+footer ul li {
+  display: inline; /* Display list items in a line */
+  margin-right: 20px; /* Margin to the right of each item */
+}
+
+footer a {
+  color: white; /* White text color for links */
+  text-decoration: none; /* No underline on links */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+form, .books, .des {
+  min-height: calc(100vh - 100px);
+}
+
+.books, .des {
+  font-size: large;
+  background-color: #2980b9; /* Light grey background */
+  border-left: 4px solid darkblue; /* Green vertical line on the left */
+  color: #fff; /* Wnite Text Color
+  font-size: 1.1rem; /* Slightly larger font size */
+  line-height: 1.6; /* Spacing between lines */
+  margin-top: 5px; /* Margin at the bottom of the paragraph */
+  margin-bottom: 5px; /* Margin at the bottom of the paragraph */
+  padding: 15px; /* Padding inside the paragraph */
+  text-align: justify; /* Justified text alignment */
+  border-radius: 5px; /* Rounded corners */
+  list-style: none;
+}
+
+.form-container {
+  max-width: 500px; /* Adjust as needed */
+  margin: auto;
+  padding: 20px;
+  background-color: #2980b9; /* Light background for the form */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="password"], select, textarea {
+  width: 100%; /* Full width */
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, select:focus, textarea:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+.errors {
+  color: red;
+  font-size: 0.9em;
+}

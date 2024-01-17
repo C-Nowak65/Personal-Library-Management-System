@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>All Books</h2>
+<ul class="books">
+    <a href="{{ url_for('main.my_books') }}" class="btn">My Books</a>
+    {% for book in books %}
+        <li>
+            Title: {{ book.title }}
+        </li>
+        <li>
+            Author: {{ book.author }}
+        </li>
+        <li>
+            Genre: {{ book.genre }}
+        </li>
+        <li>
+            Status: {{ book.status.value }}
+        </li>
+        <li>
+            Rating: {{ book.rating }}
+        </li>
+        <li>
+            Added By: {{ book.user.user_name }}
+        </li>
+        <li>
+            ************************************************************************
+        </li>
+
+    {% endfor %}
+</ul>
+{% endblock %}

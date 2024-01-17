@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Book</h2>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.title.label }}
+        {{ form.title(size=32) }}
+        {% if form.title.errors %}
+            <ul class="errors">
+                {% for error in form.title.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </p>
+    <p>
+        {{ form.author.label }}
+        {{ form.author(size=32) }}
+        {% if form.author.errors %}
+        <ul class="errors">
+            {% for error in form.author.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </p>
+    <p>
+        {{ form.genre.label }}
+        {{ form.genre(size=32) }}
+        {% if form.genre.errors %}
+        <ul class="errors">
+            {% for error in form.genre.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </p>
+    <p>
+        {{ form.start_date.label }}
+        {{ form.start_date(size=32) }}
+        {% if form.start_date.errors %}
+        <ul class="errors">
+            {% for error in form.start_date.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </p>
+    <p>
+        {{ form.end_date.label }}
+        {{ form.end_date(size=32) }}
+        {% if form.end_date.errors %}
+        <ul class="errors">
+            {% for error in form.end_date.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </p>
+    <p>
+        {{ form.status.label }}
+        {{ form.status(size=32) }}
+        {% if form.status.errors %}
+        <ul class="errors">
+            {% for error in form.status.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </p>
+    <p>
+        {{ form.rating.label }}
+        {{ form.rating(size=32) }}
+        {% if form.rating.errors %}
+        <ul class="errors">
+            {% for error in form.rating.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

@@ -1,12 +1,8 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from config import app_config
+from app import create_app, init_db
+from app.core.models import db
 
-app = Flask(__name__)
-app.config.from_object(app_config)
+app = create_app()
 
-#SQLITE config
-app.config['SQLALCHEMY_DATABASE_URL'] = 'sqlite:///site.db'
-
-if __name__ == '__main__':
+if __name__ == "__main__":
+    init_db(app)
     app.run()

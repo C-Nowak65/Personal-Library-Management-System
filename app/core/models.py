@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
-from flask_cache import Cache
+from flask_caching import Cache
 from enum import Enum
 
 db = SQLAlchemy()
@@ -62,18 +62,6 @@ class Books(db.Model):
     rating = db.Column(db.Float)
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
 
-
-    def __init__(self, title, author, genre, start_date, end_date, status, rating, user_id):
-        '''A method to initialize the book class.'''
-        self.title = title
-        self.author = author
-        self.genre = genre
-        self.start_date = start_date
-        self.end_date = end_date
-        self.status = status
-        self.rating = rating
-        self.user_id = user_id 
-
     def update_status(self, new_status):
         '''A method to update the status of the book.'''
         self.status = new_status
@@ -82,12 +70,7 @@ class Books(db.Model):
         '''A method to return a formatted representation of the book.'''
         return f"Title: {self.title}. Author: {self.author}, Genre: {self.genre}"
     
-    def reading_time(self):
-        '''A method to calculate the reading time.'''
-        if self.start_date and self.end_date:
-            return self.end_date - self.start_date
-        return None
-    
+
     def is_reading(self):
         '''A method to check if the book is currently being read.'''
         return self.status == BookStatus.CURRENTLY_READING
